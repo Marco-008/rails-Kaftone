@@ -5,4 +5,6 @@
 <li><%= @item.price  %></li>
 <li><%= @item.color%></li>
 <li><%= @item.location %></li>
-<li><%= @item.picture %></li>
+<li><img src="<%= @item.picture %>" alt="caftani"></li>
+
+<%= link_to 'Back to caftans', items_path %>
