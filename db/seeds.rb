@@ -6,8 +6,19 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-items.destroy_all
+puts "Cleaning database..."
+Item.destroy_all
 
-10.times do
-  Item.create({user_id: 1, title: "caftan YSL", description: "chic", price: "1000", location: "casa", picture:"", color: ""})
+puts "Creating items..."
+kaftan1 = {user_id: 1, title: "Kaftan YSL 1", description: "Lorem Ipsum",
+  price: "1260 mad per day", location: "Casablanca", picture: "", review: "", color: "red" }
+kaftan2 = {user_id: 1, title: "Kaftan YSL 2", description: "Lorem Ipsum",
+  price: "1260 mad per day", location: "Casablanca", picture: "", review: "", color: "black" }
+kaftan3 ={user_id: 1, title: "Kaftan YSL 3", description: "Lorem Ipsum",
+  price: "1260 mad per day", location: "Casablanca", picture: "", review: "", color: "yellow" }
+
+[kaftan1, kaftan2, kaftan3].each do |attributes|
+  kaftan = Item.create!(attributes)
+  puts "Created #{kaftan.title}"
 end
+puts "Finished!"
