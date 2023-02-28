@@ -5,9 +5,10 @@ body {
 
 .card {
   background: #222;
-  border: 1px solid #dd2476;
+  border: 1px solid black;
   color: rgba(250, 250, 250, 0.8);
   margin-bottom: 2rem;
+  box-shadow: 2px 2px 2px 1px #4b4a4a;
 }
 
 .btn {
