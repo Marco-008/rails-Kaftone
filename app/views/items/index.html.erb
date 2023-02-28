@@ -1,7 +1,6 @@
+
 <h1 class="text-center">Kaftone</h1>
 <h2 class="text-center">Be Haute Couture</h2>
-
-
 <div class="container">
   <div class="row justify-content space-between">
           <% @items.each do |item|%>
@@ -20,4 +19,5 @@
               </a>
           <% end %>
   </div>
+  <button  type="button"><%= link_to 'Create a new item', new_item_path%></button>
 </div>

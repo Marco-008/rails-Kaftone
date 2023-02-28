@@ -1,10 +1,14 @@
 <h1>Lorem Ipsum</h1>
 <ul>
-<li><%= @item.title  %></li>
-<li><%= @item.description %></li>
-<li><%= @item.price  %></li>
+<li><%= @item.title%></li>
+<li><%= @item.description%></li>
+<li><%= @item.price%></li>
 <li><%= @item.color%></li>
 <li><%= @item.location %></li>
-<li><img src="<%= @item.picture %>" alt="caftani"></li>
+<li> <% if @item.photo.key? %>
+  <%= cl_image_tag(@item.photo.key) %>
+<% end %> </li>
+
+<%# <%= cl_image_tag(@item.photo.key) %>
 
 <%= link_to 'Back to caftans', items_path %>
