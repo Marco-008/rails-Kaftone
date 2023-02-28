@@ -2,7 +2,7 @@
 <h1 >KAFTONE</h1>
 <div class="d-flex justify-content-center roundes">
   <div >
-    <%= cl_image_tag @item.photo.key, class:"rounded shadow" , height: 450px %>
+    <%= cl_image_tag(@item.photo.key, class:"rounded shadow", height: 450) %>
   </div>
   <div class="m-3 p-3">
     <h3><strong><%= @item.title %></strong></h3>
@@ -17,4 +17,5 @@
     <hr>
   </div>
 </div>
-<button class="p-2 btn btn-outline-secondary rounded border-0"><%= link_to 'Back to caftans', items_path, class:"text-decoration-none" %></button>
+<button class=" btn btn-primary rounded border-0"><%= link_to 'Back to caftans', items_path, class:"text-decoration-none" %></button>
+
