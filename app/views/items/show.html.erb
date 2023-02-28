@@ -1,14 +1,20 @@
-<h1>Lorem Ipsum</h1>
-<ul>
-<li><%= @item.title%></li>
-<li><%= @item.description%></li>
-<li><%= @item.price%></li>
-<li><%= @item.color%></li>
-<li><%= @item.location %></li>
-<li> <% if @item.photo.key? %>
-  <%= cl_image_tag(@item.photo.key) %>
-<% end %> </li>
 
-<%# <%= cl_image_tag(@item.photo.key) %>
-
-<%= link_to 'Back to caftans', items_path %>
+<h1 >KAFTONE</h1>
+<div class="d-flex justify-content-center roundes">
+  <div >
+    <%= cl_image_tag @item.photo.key, class:"rounded shadow" , height: 450px %>
+  </div>
+  <div class="m-3 p-3">
+    <h3><strong><%= @item.title %></strong></h3>
+    <hr>
+    <h4><i class="fa-regular fa-credit-card"></i><%= @item.price%> MAD</h4>
+    <hr>
+    <h4><i class="fa-solid fa-droplet"></i> <%= @item.color%></h4>
+    <hr>
+    <h4><i class="fa-solid fa-location-dot"></i> <%= @item.location %></h4>
+    <hr>
+    <h5><%= @item.description %></h5>
+    <hr>
+  </div>
+</div>
+<button class="p-2 btn btn-outline-secondary rounded border-0"><%= link_to 'Back to caftans', items_path, class:"text-decoration-none" %></button>
