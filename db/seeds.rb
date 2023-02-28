@@ -10,12 +10,12 @@ puts "Cleaning database..."
 Item.destroy_all
 
 puts "Creating items..."
-kaftan1 = {user_id: 1, title: "Kaftan YSL 1", description: "Lorem Ipsum",
-  price: "1260 mad per day", location: "Casablanca", review: "", color: "red", picture: 'https://images.unsplash.com/photo-1649109667872-f637a5c11a9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'}
-kaftan2 = {user_id: 1, title: "Kaftan YSL 2", description: "Lorem Ipsum",
-  price: "1260 mad per day", location: "Casablanca", review: "", color: "black", picture: 'https://images.unsplash.com/photo-1649109670237-31fcefbac2b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80' }
-kaftan3 ={user_id: 1, title: "Kaftan YSL 3", description: "Lorem Ipsum",
-  price: "1260 mad per day", location: "Casablanca", review: "", color: "yellow", picture: 'https://images.unsplash.com/photo-1649109670220-b8f0cb14a29b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80' }
+kaftan1 = {user_id: 1, title: "Caftan beldi", description: "Lorem Ipsum",
+  price: "1260 mad per day", location: "Casablanca", review: "", color: "⚫️ Black", picture: 'https://images.unsplash.com/photo-1649109667872-f637a5c11a9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80'}
+kaftan2 = {user_id: 1, title: "Caftan Haute Couture", description: "Lorem Ipsum",
+  price: "1260 mad per day", location: "Casablanca", review: "", color: "🟢 Green", picture: 'https://images.unsplash.com/photo-1649109670237-31fcefbac2b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80' }
+kaftan3 ={user_id: 1, title: "Caftan chic", description: "Lorem Ipsum",
+  price: "1260 mad per day", location: "Casablanca", review: "", color: "🔴 Red", picture: 'https://images.unsplash.com/photo-1649109670220-b8f0cb14a29b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80' }
 
 [kaftan1, kaftan2, kaftan3].each do |attributes|
   kaftan = Item.create!(attributes)
