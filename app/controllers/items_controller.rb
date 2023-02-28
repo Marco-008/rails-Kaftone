@@ -6,4 +6,9 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
   end
+
+  def search
+    @items = Item.where("LOWER(title) LIKE ?", "%" + params[:q].downcase + "%")
+  end
+
 end
