@@ -22,6 +22,10 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+  
+  def search
+    @items = Item.where("LOWER(title) LIKE ?", "%" + params[:q].downcase + "%")
+  end
 
   private
 
@@ -32,4 +36,6 @@ class ItemsController < ApplicationController
   def set_item
 
   end
+  
+
 end
