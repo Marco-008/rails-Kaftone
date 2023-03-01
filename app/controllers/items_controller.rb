@@ -1,10 +1,11 @@
 class ItemsController < ApplicationController
+before_action :set_item, only: [:show, :destroy]
+
   def index
     @items = Item.all
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def new
@@ -22,7 +23,12 @@ class ItemsController < ApplicationController
       render :new
     end
   end
-  
+
+  def destroy
+    @item.destroy
+    redirect_to items_path, status: :see_other
+  end
+
   def search
     @items = Item.where("LOWER(title) LIKE ?", "%" + params[:q].downcase + "%")
   end
@@ -34,8 +40,6 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-
+    @item = Item.find(params[:id])
   end
-  
-
 end
