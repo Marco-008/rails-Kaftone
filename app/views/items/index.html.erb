@@ -7,11 +7,9 @@
             <div class="col-12 col-sm-4">
               <a href="<%= item_path(item) %>">
               <div class="card">
-
-                  <%= cl_image_tag(item.photo.key, class:"rounded shadow", height: 450) %>
-
                   <div class="card-body">
                       <h5 class="card-title"><%= item.title %></h5>
+                      <%= cl_image_tag(item.photo.key, class:"rounded shadow", height: 450, width: 370) %>
                       <h6 class="card-subtitle mb-2 text-muted"><%= item.price %> MAD</h6>
                       <h6 class="card-text"><%= item.color %></h6>
                       <%= link_to "More details", item_path(item), class:"btn-card" %>
