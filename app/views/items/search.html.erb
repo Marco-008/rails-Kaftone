@@ -5,7 +5,7 @@
             <div class="col-12 col-sm-4">
               <a href="<%= item_path(item) %>">
               <div class="card">
-                <img src="<%= item.picture %>" class="card-img-top" alt="...">
+                <%= cl_image_tag(item.photo.key, class:"card-img-top" ) %>
                   <div class="card-body">
                       <h5 class="card-title"><%= item.title %></h5>
                       <h6 class="card-subtitle mb-2 text-muted"><%= item.price %> MAD</h6>
