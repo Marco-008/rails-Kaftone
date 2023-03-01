@@ -4,7 +4,7 @@
 <button class=" btn btn-primary rounded border-0"><%= link_to 'Back to caftans', items_path, class:"text-decoration-none" %></button>
 </div>
 <div>
-<button class=" btn btn-primary rounded border-0"><%= link_to "Delete", items_path(@item),
+<button class=" btn btn-primary rounded border-0"><%= link_to "Delete", @item,
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %></button>
 </div>
