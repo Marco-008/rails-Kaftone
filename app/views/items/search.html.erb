@@ -1,6 +1,19 @@
 <h1>Search Results</h1>
-<ul>
-  <% @items.each do |item|%>
-  <li> <%= link_to item.title, item_path(item) %></li>
-  <%end%>
-</ul>
+
+  <div class="row justify-content space-between">
+          <% @items.each do |item|%>
+            <div class="col-12 col-sm-4">
+              <a href="<%= item_path(item) %>">
+              <div class="card">
+                <img src="<%= item.picture %>" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title"><%= item.title %></h5>
+                      <h6 class="card-subtitle mb-2 text-muted"><%= item.price %> MAD</h6>
+                      <h6 class="card-text"><%= item.color %></h6>
+                      <%= link_to "More details", item_path(item), class:"btn-card" %>
+                  </div>
+                </div>
+              </div>
+              </a>
+          <% end %>
+  </div>
