@@ -1,7 +1,26 @@
-
-body {
-  background: white;
+.card {
+  height: 100%;
 }
+
+.card-img-container {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card-location
+{
+  color : black
+}
+
+.card-img-top {
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+  
 a {
   color: rgba(4, 4, 4, 0.8);
   text-decoration: none;
@@ -10,27 +29,44 @@ a {
     text-decoration: none;
     cursor: pointer;
   }
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.card {
-  background: #222;
-  border: 1px solid black;
-  color: rgba(250, 250, 250, 0.8);
-  margin-bottom: 2rem;
-  box-shadow: 2px 2px 2px 1px #4b4a4a;
+.col-lg-2,
+.col-md-3,
+.col-sm-4,
+.col-6 {
+  padding: 10px;
 }
 
-.btn-card {
-  border: 5px solid;
-  border-image-slice: 1;
-  text-decoration: none;
-  transition: all .4s ease;
-  color:rgba(250, 250, 250, 0.8)
+.ac-ln-button {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  background: #ff4747;
+  color: #fff;
+  border-radius: 980px;
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  min-width: 23px;
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  --sk-button-margin-horizontal: 10px;
+  --sk-button-margin-vertical: 10px;
 }
 
-.btn:hover, .btn:focus {
-
-  border: 5px solid #fff !important;
-  box-shadow: #222 1px 0 10px;
-  text-decoration: underline;
+.card-title{
+  color: #ff4747;
+  font-size: 16px;
 }
+
