@@ -2,22 +2,37 @@
 <h1 class="text-center">Kaftone</h1>
 <h2 class="text-center">Be Haute Couture</h2>
 <div class="container">
-  <div class="row justify-content space-between">
-          <% @items.each do |item|%>
-            <div class="col-12 col-sm-4">
-              <a href="<%= item_path(item) %>">
-              <div class="card">
-                  <div class="card-body">
-                      <h5 class="card-title"><%= item.title %></h5>
-                      <%= cl_image_tag(item.photo.key, class:"rounded shadow", height: 450, width: 370) %>
-                      <h6 class="card-subtitle mb-2 text-muted"><%= item.price %> MAD</h6>
-                      <h6 class="card-text"><%= item.color %></h6>
-                      <%= link_to "More details", item_path(item), class:"btn-card" %>
-                  </div>
-                </div>
-              </div>
-              </a>
+
+<div class="container">
+  <div class="row">
+    <% @items.each do |item| %>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+      <div class="card mb-3">
+        <a href="<%= item_path(item) %>">
+          <% if item.photo.present? %>
+          <div class="card-img-container">
+            <%= cl_image_tag(item.photo.key, class: "card-img-top") %>
+          </div>
           <% end %>
+        </a>
+        <div class="card-body">
+          <h5 class="card-title"><%= item.title %></h5>
+          <h6 class="card-price"><%= item.price %> MAD/jour</h6>
+          <h6 class="card-color"><%= item.color %></h6>
+          <h6 class="card-location"> Ville: <%= item.location %></h6>
+
+          <%= link_to " > Voir le Kaftan", item_path(item), class:"ac-ln-button" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
   </div>
   <button  type="button"><%= link_to 'Create a new item', new_item_path%></button>
 </div>
