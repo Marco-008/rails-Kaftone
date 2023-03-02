@@ -9,8 +9,8 @@
               <div class="card">
                   <div class="card-body">
                       <h5 class="card-title"><%= item.title %></h5>
-                      <%= cl_image_tag(item.photo.key, class:"rounded shadow", height: 450, width: 370) %>
-                      <h6 class="card-subtitle mb-2 text-muted"><%= item.price %> MAD</h6>
+                      <%= cl_image_tag(item.photos[1], class:"rounded shadow", height: 450, width: 370) %>
+                      <h6 class="card-subtitle mb-2 text-muted"><%= item.price %> MAD </h6>
                       <h6 class="card-text"><%= item.color %></h6>
                       <%= link_to "More details", item_path(item), class:"btn-card" %>
                   </div>
