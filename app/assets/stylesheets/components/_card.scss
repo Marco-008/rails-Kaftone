@@ -9,6 +9,7 @@
   align-items: center;
 }
 
+
 .card-location
 {
   color : black
@@ -19,6 +20,16 @@
   max-width: 100%;
   object-fit: contain;
 }
+  
+a {
+  color: rgba(4, 4, 4, 0.8);
+  text-decoration: none;
+  &:hover {
+    color: rgba(229, 8, 8, 0.8);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
 
 .row {
   display: flex;
