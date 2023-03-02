@@ -23,13 +23,14 @@
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Create a Caftan", "#", class: "nav-link" %>
+            <%# <%= link_to "Create a Caftan", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://www.alliesmithmakeup.com/wp-content/uploads/2019/05/negafa-versailles-lbyssa-360x420.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Create a Caftan", "#", class: "dropdown-item" %>
-              <%= link_to "See all Caftans", "#", class: "dropdown-item" %>
+              <%= link_to "Create a Caftan", new_item_path, class: "dropdown-item" %>
+              <%= link_to "See all Caftans", items_path, class: "dropdown-item" %>
+              <%= link_to "Edit Account", edit_user_registration_path, class: "dropdown-item" %>
               <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>

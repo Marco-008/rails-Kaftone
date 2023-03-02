@@ -9,9 +9,11 @@
     <% @items.each do |item| %>
     <div class="col-lg-2 col-md-3 col-sm-4 col-6">
       <div class="card mb-3">
+        <div class="card-header"> <small><%= item.user.first_name %></small></div>
         <a href="<%= item_path(item) %>">
           <% if item.photos[0].present? %>
           <div class="card-img-container">
+          <%# <p>Item by: <%= item.user.first_name %></p>
             <%= cl_image_tag(item.photos[0].key, class: "card-img-top") %>
           </div>
 
@@ -22,7 +24,7 @@
           <h6 class="card-price"><%= item.price %> MAD/jour</h6>
           <h6 class="card-color"><%= item.color %></h6>
           <h6 class="card-location"> Ville: <%= item.location %></h6>
-
+          <p class="card-text"><small class="text-muted"><p> last updated<%= Time.new %></p></small></p>
           <%= link_to " > Voir le Kaftan", item_path(item), class:"ac-ln-button" %>
         </div>
       </div>

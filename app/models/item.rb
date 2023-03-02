@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_many_attached :photos
-  VILLES = %w[Marrakech Fès Meknès Rabat Casablanca Agadir Tanger Oujda Tétouan Essaouira Kénitra Nador El_Jadida Taza Safi Salé Béni_Mellal]
+  VILLES = %w[Marrakech Paris Fès Meknès Rabat London Casablanca Madrid Agadir Barcelona Tanger Oujda Tétouan Essaouira Berlin Kénitra Nador Ottawa El_Jadida Taza Safi Salé BéniMellal ]
   validates :location, inclusion: { in: VILLES }
 end
