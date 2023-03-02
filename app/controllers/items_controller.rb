@@ -5,6 +5,11 @@ class ItemsController < ApplicationController
       @items = Item.all
     end
 
+    def destroy
+      @item.destroy
+      redirect_to items_path, status: :see_other
+    end
+
     def show
     end
 
@@ -23,10 +28,6 @@ class ItemsController < ApplicationController
       end
     end
 
-    def destroy
-      @item.destroy
-      redirect_to items_path, status: :see_other
-    end
 
     def search
       @items = Item.where("LOWER(title) LIKE ?", "%" + params[:q].downcase + "%")
@@ -40,7 +41,7 @@ class ItemsController < ApplicationController
        @item.update(item_params) # Will raise ActiveModel::ForbiddenAttributesError
        redirect_to item_path(@item)
      end
-  
+
   private
 
     def item_params

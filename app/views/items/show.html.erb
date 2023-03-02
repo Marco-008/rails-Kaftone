@@ -4,9 +4,10 @@
 <button class=" btn btn-primary rounded border-0"><%= link_to 'Back to caftans', items_path, class:"text-decoration-none" %></button>
 </div>
 <div>
-<button class=" btn btn-primary rounded border-0"><%= link_to "Delete", items_path(@item),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%></button>
+
+<%= button_to 'Destroy', item_d_path(@item), method: :delete, form:
+  { data: { turbo: true, turbo_confirm: 'Are you sure?' } }, class: "btn btn-primary rounded border-0" %>
+
 </div>
 <div class="d-flex justify-content-center roundes">
   <div >
