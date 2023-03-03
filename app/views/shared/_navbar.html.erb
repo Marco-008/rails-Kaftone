@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "/assets/images/Black And White Rakia Designapp Studio Logo.png" %>
+      <%= image_tag "https://www.mazagan-couture.fr/wp-content/uploads/2022/04/icone-caftan-mazagan-couture-1.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,18 +18,19 @@
 <!--Barre de recherche par Marco-008-->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+      <%= link_to "Create a Caftan", new_item_path, class: "nav-link" %>
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Create a Caftan", "#", class: "nav-link" %>
+            <%# <%= link_to "Create a Caftan", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://www.alliesmithmakeup.com/wp-content/uploads/2019/05/negafa-versailles-lbyssa-360x420.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Create a Caftan", "#", class: "dropdown-item" %>
-              <%= link_to "See all Caftans", "#", class: "dropdown-item" %>
+              <%= link_to "See all Caftans", items_path, class: "dropdown-item" %>
+              <%= link_to "Edit Account", edit_user_registration_path, class: "dropdown-item" %>
               <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
