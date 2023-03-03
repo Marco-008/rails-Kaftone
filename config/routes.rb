@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'rentings/new'
+  get 'rentings/create'
   devise_for :users
   resources :items do
-    resources :rentings, only: [:new, :create]
+    resources :rentings, only: [:index, :new, :create]
   end
 
   root to: "items#index"
