@@ -39,8 +39,11 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update(item_params) # Will raise ActiveModel::ForbiddenAttributesError
-    redirect_to item_path(@item)
+    if @item.update(item_params) # Will raise ActiveModel::ForbiddenAttributesError
+      redirect_to item_path(@item), notice: 'Caftan was successfully updated'
+    else
+      render :edit
+    end
   end
 
   private
