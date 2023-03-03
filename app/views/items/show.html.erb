@@ -1,74 +1,33 @@
-<h1>KAFTONE</h1>
-<div>
-  <button class="btn btn-primary rounded border-0">
-    <%= link_to 'Back to caftans', items_path, class:"text-decoration-none" %>
-  </button>
-</div>
-<div>
-  <%= button_to 'Destroy', item_d_path(@item), method: :delete, form: { data: { turbo: true, turbo_confirm: 'Are you sure?' } }, class: "btn btn-primary rounded border-0" %>
-</div>
-<div class="d-flex justify-content-center roundes">
+<h1 class="text-center">KAFTONE</h1>
+
+<div class ="d-flex justify-content-center m-3 p-3">
   <div>
-    <% @item.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-  </div>
+    <div class="productImage">
+      <p id="largeImage" data-images-target="picture">
+        <%= cl_image_tag @item.photos[0].key, crop: :fill,id:"mainImg", width:300 ,height:400, class:"rounded shadow" %>
+      </p>
+    </div>
+
+    <div id="thumbs" onclick="changeImageOnClick(event)" >
+      <% @item.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, crop: :fill, class:"rounded shadow" %>
+      <% end %>
+    </div>
+
+<div class="d-flex justify-content-center roundes">
+
   <div class="m-3 p-3">
     <h3><strong><%= @item.title %></strong></h3>
     <hr>
-    <h4><i class="fa-regular fa-credit-card"></i><%= @item.price%> MAD</h4>
+    <h4><%= @item.price%> MAD</h4>
     <hr>
-    <h4><i class="fa-solid fa-droplet"></i> <%= @item.color%></h4>
+    <h4><%= @item.color%></h4>
     <hr>
-    <h4><i class="fa-solid fa-location-dot"></i> <%= @item.location %></h4>
+    <h4><%= @item.location %></h4>
     <hr>
     <h5><%= @item.description %></h5>
     <hr>
-
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   <div>
@@ -87,6 +46,22 @@
  <%= render "reviews/form", item: @item, review: @review %>
 </div>
 
+<div class="action-links">
+  <%= link_to "Back to caftans", items_path %>
+  <%= link_to "Edit", edit_item_path(@item) %>
+  <%= link_to "Destroy", item_d_path(@item), method: :delete, form: { data: { turbo: true, turbo_confirm: "Are you sure?" } }, class: "delete-link" %>
+</div>
+
+<script>
+  function changeImageOnClick(event) {
+    event = event || window.event;
+    var targetElement = event.target || event.srcElement;
+    if(targetElement.tagName == "IMG") {
+      document.getElementById("mainImg").src = targetElement.getAttribute("src");
+    }
+  }
+</script>
+
 
 
     </div>
@@ -94,11 +69,3 @@
 </div>
 
 </div>
-
-
-<button class="btn btn-primary rounded border-0">
-  <%= link_to 'Back to caftans', items_path, class:"text-decoration-none" %>
-</button>
-<button class="btn btn-primary rounded border-0">
-  <%= link_to 'Edit', edit_item_path(@item), class:"text-decoration-none" %>
-</button>

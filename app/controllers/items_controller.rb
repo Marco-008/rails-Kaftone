@@ -12,7 +12,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @review = Review.new  # Add this line
   end
 
