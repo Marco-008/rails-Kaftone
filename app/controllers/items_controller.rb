@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to item_path, status: :see_other
+    redirect_to items_path, status: :see_other
   end
 
   def show
