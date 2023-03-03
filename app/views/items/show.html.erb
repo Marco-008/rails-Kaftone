@@ -60,4 +60,5 @@
   <%= link_to "Back to caftans", items_path %>
   <%= link_to "Edit", edit_item_path(@item) %>
   <%= button_to "Destroy", item_d_path(@item), method: :delete, form: { data: { turbo: true, turbo_confirm: "Are you sure?" } }, class: "delete-link" %>
+  <button class=" btn btn-primary rounded border-0"><%= link_to 'Rent', new_item_renting_path(@item), class:"text-decoration-none" %></button>
 </div>
