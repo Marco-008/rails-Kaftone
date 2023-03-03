@@ -11,10 +11,9 @@
       <div class="card mb-3">
         <a href="<%= item_path(item) %>">
           <% if item.photos[0].present? %>
-          <div class="card-img-container">
-            <%= cl_image_tag(item.photos[0].key, class: "card-img-top") %>
-          </div>
-
+            <div class="card-img-container">
+              <%= cl_image_tag(item.photos[0].key, class: "card-img-top") %>
+      </div>
           <% end %>
         </a>
         <div class="card-body">
@@ -22,19 +21,10 @@
           <h6 class="card-price"><%= item.price %> MAD/jour</h6>
           <h6 class="card-color"><%= item.color %></h6>
           <h6 class="card-location"> Ville: <%= item.location %></h6>
-
           <%= link_to " > Voir le Kaftan", item_path(item), class:"ac-ln-button" %>
         </div>
       </div>
     </div>
     <% end %>
   </div>
-</div>
-
-
-
-
-
-  </div>
-  <button  type="button"><%= link_to 'Create a new item', new_item_path%></button>
 </div>

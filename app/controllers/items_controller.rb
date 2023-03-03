@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @review = Review.new  # Add this line
   end
 
   def new
