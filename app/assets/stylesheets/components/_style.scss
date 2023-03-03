@@ -36,7 +36,14 @@
   cursor: pointer;
   transition: 0.5s;
 }
-
+button {
+  margin-right: 1rem;
+    text-decoration: none;
+    color: #acadae;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+}
 .action-links a:hover {
   text-decoration: underline;
   transform: scale(1.2);

@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema[7.0].define(version: 2023_03_03_082452) do
-
+ActiveRecord::Schema[7.0].define(version: 2023_03_03_103032) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,18 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_082452) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "bookings", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "item_id", null: false
-    t.date "start_date"
-    t.date "end_date"
-    t.text "notes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_bookings_on_item_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
-  end
-
   create_table "items", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -67,10 +53,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_082452) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
-    t.bigint "booked_by"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
-
 
   create_table "rentings", force: :cascade do |t|
     t.date "pick_up_date"
@@ -81,6 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_082452) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_rentings_on_item_id"
     t.index ["user_id"], name: "index_rentings_on_user_id"
+  end
 
   create_table "reviews", force: :cascade do |t|
     t.text "content"
@@ -106,12 +91,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_082452) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "items"
-  add_foreign_key "bookings", "users"
   add_foreign_key "items", "users"
-
   add_foreign_key "rentings", "items"
   add_foreign_key "rentings", "users"
   add_foreign_key "reviews", "items"
-
 end
